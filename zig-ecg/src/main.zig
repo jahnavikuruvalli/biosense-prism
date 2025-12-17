@@ -4,7 +4,7 @@ const fft = @import("fft.zig");
 pub fn main() !void {
     var allocator = std.heap.page_allocator;
 
-    var signal = try allocator.alloc(std.math.Complex(f64), 8);
+    const signal = try allocator.alloc(std.math.Complex(f64), 8);
     defer allocator.free(signal);
 
     for (signal, 0..) |*v, i| {

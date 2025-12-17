@@ -19,7 +19,7 @@ pub fn fft(signal: []std.math.Complex(f64)) void {
     fft(odd);
 
     for (0..n/2) |k| {
-        const angle = -2.0 * std.math.pi * @as(f64, k) / @as(f64, n);
+        const angle = -2.0 * std.math.pi * @as(f64, @floatFromInt(k)) / @as(f64, @floatFromInt(n));
         const twiddle = std.math.Complex(f64){
             .re = std.math.cos(angle),
             .im = std.math.sin(angle),
